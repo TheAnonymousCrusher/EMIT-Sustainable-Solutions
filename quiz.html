@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz - Sustainable Solutions</title>
+    <link rel="icon" type="images/svg" href="assets/favicon.svg"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700|Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/preloader.css">
+
+
+</head>
+<style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+    font-family: 'Quicksand', Arial;
+}
+  
+::-webkit-scrollbar {
+    width: 0px; 
+} 
+
+
+html, body {
+    height: 100%;
+
+}
+
+
+body {
+    font-family: 'Arial', serif;
+    
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    background: url('assets/header-earth.jpg');
+    background-color : black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.game-quiz-container{
+    width: 40rem;
+    height: 30rem;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 30px;
+
+    outline: 5px solid gray;
+}
+
+.game-details-container{
+    width: 80%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-details-container h1{
+    font-size: 1.2rem;
+}
+
+.game-question-container{
+    width: 80%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid darkgray;
+    border-radius: 25px;
+    background: black;
+    color: white;
+}
+
+.game-question-container h1{
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 3px;
+}
+
+.game-options-container{
+    width: 80%;
+    height: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  
+   /*gap: 1rem; */
+  
+}
+
+.game-options-container span{
+    width: 45%;
+    height: 3rem;
+    border: 2px solid black;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+span label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /*transition: transform 0.3s;*/
+    font-weight: 600;
+    color: rgb(22, 22, 22);
+    background: #ddd;
+    /*outline: 1px solid black;*/
+}
+
+span label:hover{
+    /*-ms-transform: scale(1.12);*/
+    /*-webkit-transform: scale(1.12);*/
+    /*transform: scale(1.12);*/
+    color: white;
+    background: black;
+}
+
+input[type="radio"] {
+    position: relative;
+    display: none;
+}
+
+
+input[type=radio]:checked ~ .option {
+	background: gray;
+    color: white;
+}
+
+.next-button-container{
+    width: 50%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.next-button-container button{
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    background: none;
+    color: black;
+    font-weight: 600;
+    border: 2px solid black;
+    cursor: pointer;
+    outline: none;
+}
+
+.next-button-container button:hover{
+    background-color: black;
+    color: white;
+}
+
+.modal-container{
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    -webkit-animation: fadeIn .3s ease-in-out;
+    animation: fadeIn .3s ease-in-out;
+}
+
+.modal-content-container{
+    height: 20rem;
+    width: 25rem;
+    background-color: rgb(43, 42, 42);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 25px;
+}
+
+.modal-content-container h1{
+    font-size: 1.3rem;
+    height: 3rem;
+    color: lightgray;
+    text-align: center;
+}
+
+.grade-details{
+    width: 15rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.grade-details p{
+    color: white;
+    text-align: center;
+}
+
+.modal-button-container{
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-button-container button{
+    width: 10rem;
+    height: 2rem;
+    background: none;
+    outline: none;
+    border: 1px solid rgb(252, 242, 241);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: .5em;
+}
+.modal-button-container button:hover{
+    background-color: rgb(83, 82, 82);
+}
+
+@media(min-width : 300px) and (max-width : 350px){
+    .game-quiz-container{
+        width: 90%;
+        height: 80vh;
+     }
+     .game-details-container h1{
+        font-size: 0.8rem;
+     }
+ 
+     .game-question-container{
+        height: 6rem;
+     }
+     .game-question-container h1{
+       font-size: 0.9rem;
+    }
+ 
+    .game-options-container span{
+        width: 90%;
+        height: 2.5rem;
+    }
+    .game-options-container span label{
+        font-size: 0.8rem;
+    }
+    .modal-content-container{
+        width: 90%;
+        height: 25rem;
+    }
+    
+    .modal-content-container h1{
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width : 350px) and (max-width : 700px){
+   .game-quiz-container{
+       width: 90%;
+       height: 80vh;
+    }
+    .game-details-container h1{
+        font-size: 1rem;
+    }
+
+    .game-question-container{
+        height: 8rem;
+    }
+
+    .game-question-container h1{
+        font-size: 0.9rem;
+     }
+
+    .game-options-container span{
+        width: 90%;
+    }
+    .modal-content-container{
+        width: 90%;
+        height: 25rem;
+    }
+    .modal-content-container h1{
+        font-size: 1.2rem;
+    }
+}
+
+
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+</style>
+</head>
+
+
+
+
+
+
+<body onload="NextQuestion(0)">
+
+
+
+ <!-- Preloader -->
+  <div  class="preloader">
+
+    <!-- <h1>LOADING...</h1> -->
+    <div class="yin-yang-loader"><img src="assets/favicon.svg"></div>
+
+    <!-- <div class="glitch-wrapper">
+      <div class="glitch" data-glitch="LOADING">LOADING</div>
+    </div> -->
+
+  </div>
+
+    <a href="index.html" style="position: fixed; z-index: 9999; transform: translateX(10px) translateY(10px);"><img style="width: 64px; outline: 3px solid white; border-radius: 50%" src="assets/favicon.svg"></a>
+
+
+
+    <main>
+        <!-- creating a modal for when quiz ends -->
+        <div class="modal-container" id="score-modal">
+          
+            <div class="modal-content-container">
+              
+                <h1>Congratulations, Quiz Completed.</h1>
+              
+                <div class="grade-details">
+                    <p>Attempts : 10</p>
+                    <p>Wrong Answers : <span id="wrong-answers"></span></p>
+                    <p>Right Answers : <span id="right-answers"></span></p>
+                    <p>Grade : <span id="grade-percentage"></span>%</p>
+                    <br>
+                    <br>
+                    <p ><span id="remarks"></span></p>
+                </div>
+              
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">Continue</button>
+                </div>
+              
+            </div>
+        </div>
+
+
+        <div class="game-quiz-container">
+          
+            <div class="game-details-container">
+                <h1>Score : <span id="player-score"></span> / 10</h1>
+                <h1> Question : <span id="question-number"></span> / 10</h1>
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question"></h1>
+            </div>
+
+            <div class="game-options-container">
+              
+               <div class="modal-container" id="option-modal">
+                 
+                    <div class="modal-content-container">
+                         <h1>Please Pick An Option</h1>
+                      
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Continue</button>
+                        </div>
+                      
+                    </div>
+                 
+               </div>
+              
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+              
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+              
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+              
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
+
+        </div>
+    </main>
+    <script>
+const questions = [
+    {
+        question: "What does EMIT stand for?",
+        optionA: "Earth Surface Mineral Dust Investigation",
+        optionB: "Electro Magnetic init telescope",
+        optionC: "A satellite",
+        optionD: "A type of mineral",
+        correctOption: "optionA"
+    },
+    {
+        question: "Who is responsible for managing the EMIT mission?",
+        optionA: "NASA's Earth data sector",
+        optionB: "The International Space Station",
+        optionC: "NASA's space exploration team",
+        optionD: "NASASpaceAppsChallenge team",
+        correctOption: "optionA"
+    },
+    {
+        question: "What is the primary objective of the EMIT mission?",
+        optionA: "To better understand the effects of airborne dust on climate and weather",
+        optionB: "To observe different types of mineral in locations.",
+        optionC: "To study greenhouse gas emissions",
+        optionD: "To observe snow and ice properties",
+        correctOption: "optionB"
+    },
+    {
+        question: "Which greenhouse gases can EMIT detect?",
+        optionA: "Methane and Carbon Dioxide",
+        optionB: "Oxygen and Nitrogen",
+        optionC: "Hydrogen and Helium",
+        optionD: "Carbon Monoxide and Sulfur Dioxide",
+        correctOption: "optionA"
+    },
+    {
+        question: "What is the role of the EMIT sensor in studying snow and ice properties?",
+        optionA: "To locate and repair leaks",
+        optionB: "To identify opportunities for methane capture",
+        optionC: "To study the balance between albedo and GHG radiative forcing",
+        optionD: "To map greenhouse gas emissions",
+        correctOption: "optionC"
+    },
+
+
+
+
+
+
+
+
+
+    {
+        question: "What is the EMIT sensor's main application in disaster management?",
+        optionA: "To identify signs of danger that can change mineral balance. e.g. Volcanic Eruption",
+        optionB: "To better understand the balance between albedo and GHG radiative forcing in the snow melting game",
+        optionC: "To locate a police station.",
+        optionD: "To identify opportunities for methane capture",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "What is the EMIT sensor's main application in scientific observation?",
+        optionA: "Investigate minerals and the effect they have on other things mainly global warming.",
+        optionB: "To better understand the balance between albedo and GHG radiative forcing in the snow melting game",
+        optionC: "To locate and repair leaks",
+        optionD: "To identify opportunities for methane capture",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "How can EMIT help against Global Warming?",
+        optionA: "Carbon Capture",
+        optionB: "Detect gas leaks",
+        optionC: "Make rockets emit less greenhouse gases",
+        optionD: "Detect iron",
+        correctOption: "optionB"
+    },
+
+
+
+
+    {
+        question: "What knowledge gap does EMIT seek to cover?",
+        optionA: "Minerals  and there  effect on Global warming and such events.",
+        optionB: "Quantum Computing",
+        optionC: "Sending humans to Mars",
+        optionD: "Solving Loadshedding.",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "EMIT is a ____ sensor",
+        optionA: "Ultra",
+        optionB: "EMF",
+        optionC: "Hyperspectral",
+        optionD: "Electricity",
+        correctOption: "optionC"
+    }
+
+]
+
+
+
+let shuffledQuestions = [] //empty array to hold shuffled selected questions
+
+function handleQuestions() { 
+    //function to shuffle and push 10 questions to shuffledQuestions array
+    while (shuffledQuestions.length <= 9) {
+        const random = questions[Math.floor(Math.random() * questions.length)]
+        if (!shuffledQuestions.includes(random)) {
+            shuffledQuestions.push(random)
+        }
+    }
+}
+
+
+let questionNumber = 1
+let playerScore = 0  
+let wrongAttempt = 0 
+let indexNumber = 0
+
+// function for displaying next question in the array to dom
+function NextQuestion(index) {
+    handleQuestions()
+    const currentQuestion = shuffledQuestions[index]
+    document.getElementById("question-number").innerHTML = questionNumber
+    document.getElementById("player-score").innerHTML = playerScore
+    document.getElementById("display-question").innerHTML = currentQuestion.question;
+    document.getElementById("option-one-label").innerHTML = currentQuestion.optionA;
+    document.getElementById("option-two-label").innerHTML = currentQuestion.optionB;
+    document.getElementById("option-three-label").innerHTML = currentQuestion.optionC;
+    document.getElementById("option-four-label").innerHTML = currentQuestion.optionD;
+
+}
+
+
+function checkForAnswer() {
+    const currentQuestion = shuffledQuestions[indexNumber] //gets current Question 
+    const currentQuestionAnswer = currentQuestion.correctOption //gets current Question's answer
+    const options = document.getElementsByName("option"); //gets all elements in dom with name of 'option' (in this the radio inputs)
+    let correctOption = null
+
+    options.forEach((option) => {
+        if (option.value === currentQuestionAnswer) {
+            //get's correct's radio input with correct answer
+            correctOption = option.labels[0].id
+        }
+    })
+   
+    //checking to make sure a radio input has been checked or an option being chosen
+    if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
+        document.getElementById('option-modal').style.display = "flex"
+    }
+
+    //checking if checked radio button is same as answer
+    options.forEach((option) => {
+        if (option.checked === true && option.value === currentQuestionAnswer) {
+            document.getElementById(correctOption).style.backgroundColor = "green"
+            playerScore++
+            indexNumber++
+            //set to delay question number till when next question loads
+            setTimeout(() => {
+                questionNumber++
+            }, 1000)
+        }
+
+        else if (option.checked && option.value !== currentQuestionAnswer) {
+            const wrongLabelId = option.labels[0].id
+            document.getElementById(wrongLabelId).style.backgroundColor = "red"
+            document.getElementById(correctOption).style.backgroundColor = "green"
+            wrongAttempt++
+            indexNumber++
+            //set to delay question number till when next question loads
+            setTimeout(() => {
+                questionNumber++
+            }, 1000)
+        }
+    })
+}
+
+
+
+//called when the next button is called
+function handleNextQuestion() {
+    checkForAnswer()
+    unCheckRadioButtons()
+    //delays next question displaying for a second
+    setTimeout(() => {
+        if (indexNumber <= 9) {
+            NextQuestion(indexNumber)
+        }
+        else {
+            handleEndGame()
+        }
+        resetOptionBackground()
+    }, 1000);
+}
+
+//sets options background back to null after display the right/wrong colors
+function resetOptionBackground() {
+    const options = document.getElementsByName("option");
+    options.forEach((option) => {
+        document.getElementById(option.labels[0].id).style.backgroundColor = ""
+    })
+}
+
+// unchecking all radio buttons for next question(can be done with map or foreach loop also)
+function unCheckRadioButtons() {
+    const options = document.getElementsByName("option");
+    for (let i = 0; i < options.length; i++) {
+        options[i].checked = false;
+    }
+}
+
+// function for when all questions being answered
+function handleEndGame() {
+    let remark = null
+    let remarkColor = null
+
+    // condition check for player remark and remark color
+    if (playerScore <= 3) {
+        remark = "You barely read the blog, didn't you?"
+        remarkColor = "red"
+    }
+    else if (playerScore >= 4 && playerScore < 7) {
+        remark = "You did okay, why not read the blog again?"
+        remarkColor = "orange"
+    }
+    else if (playerScore >= 7) {
+        remark = "Excellent, you actually read the blog. Nice."
+        remarkColor = "green"
+    }
+    const playerGrade = (playerScore / 10) * 100
+
+    //data to display to score board
+    document.getElementById('remarks').innerHTML = remark
+    document.getElementById('remarks').style.color = remarkColor
+    document.getElementById('grade-percentage').innerHTML = playerGrade
+    document.getElementById('wrong-answers').innerHTML = wrongAttempt
+    document.getElementById('right-answers').innerHTML = playerScore
+    document.getElementById('score-modal').style.display = "flex"
+
+}
+
+//closes score modal and resets game
+function closeScoreModal() {
+    questionNumber = 1
+    playerScore = 0
+    wrongAttempt = 0
+    indexNumber = 0
+    shuffledQuestions = []
+    NextQuestion(indexNumber)
+    document.getElementById('score-modal').style.display = "none"
+}
+
+//function to close warning modal
+function closeOptionModal() {
+    document.getElementById('option-modal').style.display = "none"
+}
+    </script>
+
+    
+<script type="text/javascript" src="preloader.js"></script>
+
+</body>

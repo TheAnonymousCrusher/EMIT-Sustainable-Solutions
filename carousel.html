@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="assets/favicon.svg"/>
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <link rel="stylesheet" href="css/carousel.css">
+
+
+
+</head>
+<body>
+
+  
+  <section class="game-section">
+    <h2 class="line-title">Did you Know?</h2>
+    <div class="owl-carousel custom-carousel owl-theme">
+      <div class="item active" style="background-image: url(assets/01.jpg);">
+        <div class="item-desc">
+
+          <h3>What is EMIT?</h3>
+          <p>EMIT is a snazzy two-mirror telescope and a high-speed F/1.8 Dyson imaging spectrometer, which are like the Batman and Robin of the science world. The telescope kicks things off by zeroing in on any light that heads EMIT's way. After that, the light is sent to the spectrometer slit where it zips through a calcium fluoride crystal refractive element before landing on the grating. This grating is no ordinary one, it's specially designed with a blazing structure to make the most of the full spectrum of light. Once dispersed, the light travels back through the CaF2 block and onto the order sorting filter, then the detector array. Talk about a wild ride!</p>
+
+        </div>
+      </div>
+      <div class="item" style="background-image: url(assets/02.jpg);">
+        <div class="item-desc">
+
+          <h3>The EMIT Mission</h3>
+          <p>EMIT mission, managed by NASA's Jet Propulsion Laboratory, aims to better understand the effects of airborne dust on climate and weather. EMIT collects data on the color and composition of Earth's dry, dusty regions from the International Space Station. This information will help refine climate models and determine whether dust has overall heating or cooling effects on a global and regional scale. By understanding the role of dust in the climate system, researchers can better predict precipitation patterns. EMIT was launched in July 2022 and will remain on the space station for over 12 months.</p>
+
+        </div>
+      </div>
+      <div class="item" style="background-image: url(assets/03.jpg);">
+
+        <div class="item-desc">
+          <h3>EMIT's Objective</h3>
+          <p>The primary objective of the EMIT mission is to capture and analyze the mineral content of dust-producing regions of the Earth. To achieve this goal, the mission will collect an extensive range of visible to shortwave infrared (VSWIR) radiance and reflectance data. These data sets will provide estimates of the percentage of green vegetation, nonphotosynthesizing vegetation, and key minerals across arid regions of the globe. The LP DAAC will host these data products, which will facilitate research and decision-making for numerous societal applications beyond the EMIT mission's primary goals. Collaborators from NASA's Applied Sciences Program and the EMIT project team are working collaboratively to realize the full potential of these groundbreaking data sets. We remain committed to NASA's Open Source Science Initiative and will make research-grade data products publicly available as they become available, in addition to the mission's science deliverables.</p>
+
+        </div>
+      </div>
+      <div class="item" style="background-image: url(assets/04.jpg);">
+        <div class="item-desc">
+
+          <h3>Greenhouse Gasses</h3>
+          <p>The distinctive absorption features of methane and carbon dioxide in the shortwave infrared (1800-2500nm) enable the detection and mapping of point source greenhouse gas emissions with EMIT data. As a result, identifying and addressing strong emission sources can significantly improve our comprehension of anthropogenic emissions and help mitigate them. For instance, oil and gas operators can locate and repair leaks that are both costly and environmentally destructive, providing a win-win opportunity. Other industries can use this information to identify opportunities for methane capture, such as flaring or conversion to fuel resources</p>
+
+        </div>
+      </div>
+      <div class="item" style="background-image: url(assets/05.jpg);">
+        <div class="item-desc">
+
+          <h3>Active Applications</h3>
+          <p>Not knowing the global scoop on these important factors has left us unable to accurately model the big picture of snow and ice processes worldwide. To get to the bottom of the mystery, we need the ultimate tool: the VSWIR imaging spectrometer, which has the spectral resolution to help us understand the balance between albedo and GHG radiative forcing in the snow melting game.</p>
+
+        </div>
+      </div>
+      <div class="item" style="background-image: url(assets/06.jpg);">
+        <div class="item-desc">
+
+          <h3>Destination</h3>
+          <p>Zooming through the atmosphere on a SpaceX rocket, EMIT made a grand entrance to its new home on the International Space Station (ISS)</p>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
+  <script>
+    $(".custom-carousel").owlCarousel({
+      autoWidth: true,
+      loop: true
+    });
+    $(document).ready(function () {
+      $(".custom-carousel .item").click(function () {
+        $(".custom-carousel .item").not($(this)).removeClass("active");
+        $(this).toggleClass("active");
+      });
+    });
+
+
+
+
+
+
+
+
+    // Select all img elements in the document
+    const imgElements = document.querySelectorAll('img');
+
+    // Loop through each img element
+    imgElements.forEach((img) => {
+      // Set the 'loading' attribute to 'lazy'
+      img.loading = 'lazy';
+    })
+
+
+  </script>
+
+
+</body>
+</html>

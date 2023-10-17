@@ -1,0 +1,48 @@
+#parrallax .parallax {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;   
+}
+
+
+.parallax-h2 {
+    padding: 0 0 100px 0;
+    font-size: 70px;
+    letter-spacing:10px;
+    text-align:center;
+    color: green;
+    font-weight:400;
+    text-transform:uppercase;
+    z-index:10;
+    opacity:.9;
+}
+
+@media screen and (max-width: 480px) {
+    #parrallax .block {
+        padding: 30px 15px;
+        width:95vw;
+    }
+}
+
+
+.parallax-h2 {
+    padding: 0 0 100px 0;
+    font-family:'Oswald', sans-serif;
+    font-size: 70px;
+    letter-spacing:10px;
+    text-align:center;
+    color:white;
+    font-weight:400;
+    text-transform:uppercase;
+    z-index:10;
+    opacity:.9;
+    /* font-size: 6rem; */
+}

@@ -1,0 +1,337 @@
+::-webkit-scrollbar {
+    width: 0px; 
+} 
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ddd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+input, a, p, li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+header.masthead {
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1511227499331-25c621db940e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80")
+        /*black no-repeat center center scroll*/
+    ;
+    background-size: cover;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+}
+
+header.masthead .overlay {
+    position: absolute;
+    background-color: #1387FF;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+header.masthead h1 {
+    font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+    header.masthead {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+
+    header.masthead h1 {
+        font-size: 3rem;
+    }
+}
+
+.showcase .showcase-text {
+    padding: 3rem;
+}
+
+.showcase .showcase-img {
+    min-height: 30rem;
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+    .showcase .showcase-text {
+        padding: 7rem;
+    }
+}
+
+
+.features-icons {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.features-icons .features-icons-item {
+    max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+    height: 7rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+    font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+    font-size: 5rem;
+}
+
+.testimonials {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.testimonials .testimonial-item {
+    max-width: 18rem;
+}
+
+.testimonials .testimonial-item img {
+    max-width: 12rem;
+    -webkit-box-shadow: 0px 5px 5px 0px #adb5bd;
+    box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+.call-to-action {
+    position: relative;
+    background-size: cover;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+
+.video-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 75vw; */
+}
+
+
+.btn {
+    width: 200px;
+    margin: 0 auto;
+}
+
+
+.call-to-action .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+footer.footer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.video-div {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+iframe {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+line {
+    height: 50px;
+    color: transparent;
+    width: 100vw;
+}
+
+
+
+.simulation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 100px;
+}
+
+.simulation {
+    width: 60vw;
+
+
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.simulation-btn {
+    background-color: white;
+    outline: 2px solid black;
+    padding: 1rem;
+    border-radius: 1rem;
+    transform: translateY(190px) translateX(-800px);
+    -webkit-transform: translateY(190px) translateX(-800px);
+    -moz-transform: translateY(190px) translateX(-800px);
+    -ms-transform: translateY(190px) translateX(-800px);
+    -o-transform: translateY(190px) translateX(-800px);
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.simulation-btn:hover {
+    background-color: black;
+}
+
+.simulation-btn > a {
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: system-ui;
+}
+
+.simulation-btn:hover > a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .fxm-content * {
+    color: white !important;
+ }
+
+ .fxm-content.banner{
+    display:none;
+    background-color: rgba(255, 0, 0, 0.75);
+    padding:1rem;
+    margin: 5rem;
+    /*background-size:64px 64px*/
+    border-radius: 1rem;
+    outline: 5px solid rgba(255, 0, 0, 0.3);
+}
+.fxm-content .alert{
+    margin:0 auto;
+    width:90%;
+    color: rgba(255, 0, 0, 0.1);
+}
+.fxm-content .alert-content{
+    display:inline-block;
+    color: rgba(255, 0, 0, 0.1);
+    font-size:15px;
+    font-family:sans-serif;
+    text-align:left;
+    line-height:24px
+}
+.fxm-content .alert-content p{
+    color:#000;
+    float:left;
+    margin-right:0px
+}
+.fxm-content .alert-content p.headline{
+    margin-left:0px
+}
+.fxm-content .alert-content .content-inner p{
+    margin:0 0 5px
+}
+.fxm-content .alert-content input[type=checkbox]{
+    display:none
+}
+.fxm-content .alert-content .lbl-toggle{
+    display:block;
+    font-weight:700;
+    color: rgba(255, 0, 0, 0.1);    
+    cursor:pointer;
+    transition:all .25s ease-out;
+    text-decoration:underline;
+    margin-top:5px;
+    float:right;
+    border:red dashed 1px;
+    text-decoration:none;
+    background:#000;
+    padding:10px;
+    border-radius:5px;
+    display:inline-block;
+    border:none;
+    transition:all .4s ease 0s
+}
+.fxm-content .alert-content .lbl-toggle::after{
+    content:' ';
+    display:inline-block;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+    border-left:5px solid #fff;
+    vertical-align:middle;
+    margin-left:.7rem;
+    transform:translateY(-2px);
+    transition:transform .2s ease-out
+}
+.fxm-content .alert-content .collapsible-content{
+    max-height:0;
+    overflow:hidden;
+    clear:both;
+    transition:max-height .25s ease-in-out
+}
+.fxm-content .alert-content .collapsible-content a{
+    color:#e8e8e8
+}
+.fxm-content .alert-content .toggle:checked+.lbl-toggle+.collapsible-content{
+    background-color:#696969;
+    max-height:350px;
+    padding:10px;
+    border-radius:7px;
+    margin-bottom:15px
+}
+.fxm-content .alert-content .toggle:checked+.lbl-toggle::after{
+    transform:rotate(90deg) translateX(-3px)
+}
+@media (min-width:320px) and (max-width:1024px){
+    .fxm-content .alert-content .collapsible-content{
+        margin-top:20px
+    }
+    .fxm-content .alert{
+        width:80%
+    }
+    .fxm-content .alert-content .lbl-toggle{
+        float:none;
+        clear:both;
+        width:100%;
+        text-align:center;
+        padding:10px 0
+    }
+}
